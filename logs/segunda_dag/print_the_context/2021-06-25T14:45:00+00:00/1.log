@@ -1,0 +1,58 @@
+[2021-06-25 14:50:01,938] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: segunda_dag.print_the_context 2021-06-25T14:45:00+00:00 [queued]>
+[2021-06-25 14:50:01,951] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: segunda_dag.print_the_context 2021-06-25T14:45:00+00:00 [queued]>
+[2021-06-25 14:50:01,951] {taskinstance.py:1067} INFO - 
+--------------------------------------------------------------------------------
+[2021-06-25 14:50:01,952] {taskinstance.py:1068} INFO - Starting attempt 1 of 2
+[2021-06-25 14:50:01,954] {taskinstance.py:1069} INFO - 
+--------------------------------------------------------------------------------
+[2021-06-25 14:50:01,959] {taskinstance.py:1087} INFO - Executing <Task(PythonOperator): print_the_context> on 2021-06-25T14:45:00+00:00
+[2021-06-25 14:50:01,965] {standard_task_runner.py:52} INFO - Started process 2345 to run task
+[2021-06-25 14:50:01,968] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'segunda_dag', 'print_the_context', '2021-06-25T14:45:00+00:00', '--job-id', '73', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/segunda_dag.py', '--cfg-path', '/tmp/tmp133mrbl7', '--error-file', '/tmp/tmpkbh2xsm5']
+[2021-06-25 14:50:01,969] {standard_task_runner.py:77} INFO - Job 73: Subtask print_the_context
+[2021-06-25 14:50:02,006] {logging_mixin.py:104} INFO - Running <TaskInstance: segunda_dag.print_the_context 2021-06-25T14:45:00+00:00 [running]> on host 72f340316237
+[2021-06-25 14:50:02,052] {taskinstance.py:1282} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=***@example.com
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=segunda_dag
+AIRFLOW_CTX_TASK_ID=print_the_context
+AIRFLOW_CTX_EXECUTION_DATE=2021-06-25T14:45:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-06-25T14:45:00+00:00
+[2021-06-25 14:50:02,071] {logging_mixin.py:104} INFO - {'conf': <***.configuration.AirflowConfigParser object at 0x7f066037a588>,
+ 'dag': <DAG: segunda_dag>,
+ 'dag_run': <DagRun segunda_dag @ 2021-06-25 14:45:00+00:00: scheduled__2021-06-25T14:45:00+00:00, externally triggered: False>,
+ 'ds': '2021-06-25',
+ 'ds_nodash': '20210625',
+ 'execution_date': DateTime(2021, 6, 25, 14, 45, 0, tzinfo=Timezone('+00:00')),
+ 'inlets': [],
+ 'macros': <module '***.macros' from '/home/***/.local/lib/python3.6/site-packages/***/macros/__init__.py'>,
+ 'next_ds': '2021-06-25',
+ 'next_ds_nodash': '20210625',
+ 'next_execution_date': DateTime(2021, 6, 25, 14, 50, 0, tzinfo=Timezone('UTC')),
+ 'outlets': [],
+ 'params': {},
+ 'prev_ds': '2021-06-25',
+ 'prev_ds_nodash': '20210625',
+ 'prev_execution_date': DateTime(2021, 6, 25, 14, 40, 0, tzinfo=Timezone('UTC')),
+ 'prev_execution_date_success': <Proxy at 0x7f0654bd1f88 with factory <function TaskInstance.get_template_context.<locals>.<lambda> at 0x7f0654bfe8c8>>,
+ 'prev_start_date_success': <Proxy at 0x7f0654bd5748 with factory <function TaskInstance.get_template_context.<locals>.<lambda> at 0x7f0654c11598>>,
+ 'run_id': 'scheduled__2021-06-25T14:45:00+00:00',
+ 't2': 'Outro parametro',
+ 'task': <Task(PythonOperator): print_the_context>,
+ 'task_instance': <TaskInstance: segunda_dag.print_the_context 2021-06-25T14:45:00+00:00 [running]>,
+ 'task_instance_key_str': 'segunda_dag__print_the_context__20210625',
+ 'templates_dict': None,
+ 'test_mode': False,
+ 'ti': <TaskInstance: segunda_dag.print_the_context 2021-06-25T14:45:00+00:00 [running]>,
+ 'tomorrow_ds': '2021-06-26',
+ 'tomorrow_ds_nodash': '20210626',
+ 'ts': '2021-06-25T14:45:00+00:00',
+ 'ts_nodash': '20210625T144500',
+ 'ts_nodash_with_tz': '20210625T144500+0000',
+ 'var': {'json': None, 'value': None},
+ 'yesterday_ds': '2021-06-24',
+ 'yesterday_ds_nodash': '20210624'}
+[2021-06-25 14:50:02,072] {logging_mixin.py:104} INFO - parametro passado
+[2021-06-25 14:50:02,073] {python.py:151} INFO - Done. Returned value was: Whatever you return gets printed in the logs
+[2021-06-25 14:50:02,090] {taskinstance.py:1191} INFO - Marking task as SUCCESS. dag_id=segunda_dag, task_id=print_the_context, execution_date=20210625T144500, start_date=20210625T145001, end_date=20210625T145002
+[2021-06-25 14:50:02,108] {taskinstance.py:1245} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2021-06-25 14:50:02,144] {local_task_job.py:151} INFO - Task exited with return code 0

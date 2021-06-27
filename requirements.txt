@@ -1,0 +1,6 @@
+flower==0.9.7
+redis==3.5.3
+celery==4.4.7
+psycopg2==2.7.7
+apache-airflow==2.1.0
+apache-airflow-providers-docker==2.0.0

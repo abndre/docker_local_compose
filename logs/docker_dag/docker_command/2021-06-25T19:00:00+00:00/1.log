@@ -1,0 +1,23 @@
+[2021-06-25 16:05:02,183] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: docker_dag.docker_command 2021-06-25T19:00:00+00:00 [queued]>
+[2021-06-25 16:05:02,196] {taskinstance.py:876} INFO - Dependencies all met for <TaskInstance: docker_dag.docker_command 2021-06-25T19:00:00+00:00 [queued]>
+[2021-06-25 16:05:02,196] {taskinstance.py:1067} INFO - 
+--------------------------------------------------------------------------------
+[2021-06-25 16:05:02,197] {taskinstance.py:1068} INFO - Starting attempt 1 of 2
+[2021-06-25 16:05:02,198] {taskinstance.py:1069} INFO - 
+--------------------------------------------------------------------------------
+[2021-06-25 16:05:02,216] {taskinstance.py:1087} INFO - Executing <Task(DockerOperator): docker_command> on 2021-06-25T19:00:00+00:00
+[2021-06-25 16:05:02,220] {standard_task_runner.py:52} INFO - Started process 11629 to run task
+[2021-06-25 16:05:02,225] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'docker_dag', 'docker_command', '2021-06-25T19:00:00+00:00', '--job-id', '180', '--pool', 'default_pool', '--raw', '--subdir', 'DAGS_FOLDER/dag_docker_teste.py', '--cfg-path', '/var/folders/x3/r_ng0drn51dgxp8_7cvtb49w0000gn/T/tmpbbfnj_5n', '--error-file', '/var/folders/x3/r_ng0drn51dgxp8_7cvtb49w0000gn/T/tmpd50_h5a3']
+[2021-06-25 16:05:02,226] {standard_task_runner.py:77} INFO - Job 180: Subtask docker_command
+[2021-06-25 16:05:02,287] {logging_mixin.py:104} INFO - Running <TaskInstance: docker_dag.docker_command 2021-06-25T19:00:00+00:00 [running]> on host 28.15.168.192.in-addr.arpa
+[2021-06-25 16:05:02,357] {taskinstance.py:1282} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=docker_dag
+AIRFLOW_CTX_TASK_ID=docker_command
+AIRFLOW_CTX_EXECUTION_DATE=2021-06-25T19:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2021-06-25T19:00:00+00:00
+[2021-06-25 16:05:02,384] {docker.py:231} INFO - Starting docker container from image ubuntu:latest
+[2021-06-25 16:05:02,685] {docker.py:274} INFO - hello from docker
+[2021-06-25 16:05:02,820] {taskinstance.py:1191} INFO - Marking task as SUCCESS. dag_id=docker_dag, task_id=docker_command, execution_date=20210625T190000, start_date=20210625T190502, end_date=20210625T190502
+[2021-06-25 16:05:02,852] {taskinstance.py:1245} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2021-06-25 16:05:02,878] {local_task_job.py:151} INFO - Task exited with return code 0
