@@ -15,6 +15,9 @@ default_args = {
     'retry_delay'           : timedelta(minutes=5)
 }
 
+"""Example DAG demonstrating the usage of the TaskGroup."""
+
+
 with DAG('docker_dag',
          default_args=default_args,
          schedule_interval="*/5 * * * *",
