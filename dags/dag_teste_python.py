@@ -1,3 +1,10 @@
+"""
+### ETL DAG Tutorial Documentation
+This ETL DAG is compatible with Airflow 1.10.x (specifically tested with 1.10.12) and is referenced
+as part of the documentation that goes along with the Airflow Functional DAG tutorial located
+[here](https://airflow.apache.org/tutorial_decorated_flows.html)
+"""
+
 from datetime import timedelta
 from textwrap import dedent
 from pprint import pprint
@@ -33,6 +40,8 @@ def fazer_outra_coisa(p1, **kwargs):
     print(p1)
     return 'FIM'
 
+
+
 with DAG(
     'dag_para_clicar_nasegunda',
     default_args=default_args,
@@ -42,7 +51,9 @@ with DAG(
     tags=['python'],
     catchup=False
 ) as dag:
-
+    # [START documentation]
+    dag.doc_md = __doc__
+    # [END documentation]
     run_this = PythonOperator(
         task_id='print_the_context',
         provide_context=True,

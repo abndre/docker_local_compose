@@ -15,12 +15,17 @@ default_args = {
     'retry_delay'           : timedelta(minutes=5)
 }
 
-"""Example DAG demonstrating the usage of the TaskGroup."""
+"""
+### ETL DAG Tutorial Documentation
+This ETL DAG is compatible with Airflow 1.10.x (specifically tested with 1.10.12) and is referenced
+as part of the documentation that goes along with the Airflow Functional DAG tutorial located
+[here](https://airflow.apache.org/tutorial_decorated_flows.html)
+"""
 
 
 with DAG('docker_dag',
          default_args=default_args,
-         schedule_interval="*/5 * * * *",
+         schedule_interval=None,
          catchup=False) \
         as dag:
         t1 = BashOperator(
