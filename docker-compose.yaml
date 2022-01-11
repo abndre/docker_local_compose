@@ -44,7 +44,7 @@ x-airflow-common:
   # In order to add custom dependencies or upgrade provider packages you can use your extended image.
   # Comment the image line, place your Dockerfile in the directory where you placed the docker-compose.yaml
   # and uncomment the "build" line below, Then run `docker-compose build` to build the images.
-  image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.2.2}
+  image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:2.2.3-python3.8}
   # build: .
   environment:
     &airflow-common-env
@@ -59,7 +59,7 @@ x-airflow-common:
     AIRFLOW__CORE__DEFAULT_UI_TIMEZONE: 'America/Sao_Paulo'
     AIRFLOW__CORE__DEFAULT_TIMEZONE: 'America/Sao_Paulo'
     AIRFLOW__WEBSERVER__DEFAULT_UI_TIMEZONE: 'America/Sao_Paulo'
-    AIRFLOW__WEBSERVER__INSTANCE_NAME: 'DevEnv'    
+    AIRFLOW__WEBSERVER__INSTANCE_NAME: 'DevEnv'
     _PIP_ADDITIONAL_REQUIREMENTS: ${_PIP_ADDITIONAL_REQUIREMENTS:-}
   volumes:
     - ./dags:/opt/airflow/dags
@@ -76,6 +76,10 @@ x-airflow-common:
 services:
   postgres:
     image: postgres:13
+    container_name: "postgres"
+    hostname: "postgres"
+    ports:
+      - 5432:5432
     environment:
       POSTGRES_USER: airflow
       POSTGRES_PASSWORD: airflow
@@ -90,8 +94,9 @@ services:
 
   redis:
     image: redis:latest
-    expose:
-      - 6379
+    container_name: "redis"
+    ports:
+      - 6379:6379
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 5s

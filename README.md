@@ -1,22 +1,16 @@
-# Docker Compose + Local
 
-# Inicio
+Executar docker compose com serviços do airflow
 
-Rodar
-
-```
-mkdir -p ./dags ./logs ./plugins
-echo -e "AIRFLOW_UID=$(id -u)" > .env
-```
-
-
-inicializar os servico
-```
 docker-compose up airflow-init
-```
 
-rodar
+docker-compose up postgres redis airflow-webserver airflow-scheduler airflow-cli flower airflow-triggerer
 
-```
-docker-compose up
-```
+Executar airflow-worker localmente
+
+instale o airflow 
+
+pip install -r requirements.txt
+
+export AIRFLOW_HOME=~/airflow
+
+airflow celery worker
