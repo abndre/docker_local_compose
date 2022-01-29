@@ -1,16 +1,10 @@
-import os
-from datetime import datetime, timedelta
+
+from datetime import datetime
 from airflow.models import DAG
 from airflow.operators.python_operator import PythonOperator
-from airflow.operators.bash_operator import BashOperator
-from utils.util_sql_server import CORESQL
-from utils.config import querys_auditoria
-from utils.util_datalake import Datalake
-import pandas as pd
-from textwrap import dedent
 from airflow.operators.dummy import DummyOperator
 from airflow.utils.task_group import TaskGroup
-import sys
+
 
 default_args = {
     'start_date': datetime(2021, 12, 6, 0, 0, 0),
