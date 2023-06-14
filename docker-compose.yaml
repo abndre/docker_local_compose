@@ -144,6 +144,9 @@ services:
 
   airflow-worker:
     <<: *airflow-common
+    build:
+      context: .
+      dockerfile: Dockerfile.worker
     command: celery worker -H worker_1 -q processos
     healthcheck:
       test:
@@ -165,6 +168,9 @@ services:
         condition: service_completed_successfully
   airflow-worker-2:
     <<: *airflow-common
+    build:
+      context: .
+      dockerfile: Dockerfile.worker
     command: celery worker -H worker_2 -q dados
     healthcheck:
       test:
